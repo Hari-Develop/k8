@@ -6,8 +6,10 @@ spec:
   type: NodePort
   selector:
     service-type: node-port
-    project: roboshop
+    project: roboshopnode
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
+
+
