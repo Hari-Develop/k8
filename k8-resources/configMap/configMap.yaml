@@ -4,5 +4,5 @@ metadata:
   name: env.config.map
 data:
   name: env
-  production.env: test
-  project.name: roboshop
+  production: test
+  project: roboshop
