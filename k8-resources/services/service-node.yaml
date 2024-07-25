@@ -5,8 +5,8 @@ metadata:
 spec:
   type: NodePort
   selector:
-    service-type: node-port
-    project: roboshopnode
+    app : node-port
+    environment: roboshopnode
   ports:
     - protocol: TCP
       port: 80
