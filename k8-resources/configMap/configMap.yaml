@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: ConfigMap
 metadata: 
-  name: env_config_map
+  name: env.config.map
 data:
   name: env
-  production: test
-  project: roboshop
+  production.env: test
+  project.name: roboshop
