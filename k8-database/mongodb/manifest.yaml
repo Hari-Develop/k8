@@ -24,7 +24,7 @@ spec:
       containers:
       - name: mongodb
         image: harinadhareddy/mongodb:1.0.0
-        imagePullyPolice: always
+        imagePullPolicy: Always
 
 ---
 
