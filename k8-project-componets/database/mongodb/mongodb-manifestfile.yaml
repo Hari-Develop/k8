@@ -15,7 +15,7 @@ spec:
       project: roboshop
       tier: database
   template:
-    metadata:
+    metadata: 
       labels:
         app: mongodb
         project: roboshop
@@ -25,9 +25,7 @@ spec:
       - name: mongodb
         image: harinadhareddy/mongodb:1.0.0
         imagePullPolicy: Always
-
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
@@ -42,4 +40,3 @@ spec:
   - protocol: TCP
     port: 27017
     targetPort: 27017
-
