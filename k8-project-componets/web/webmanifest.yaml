@@ -3,7 +3,12 @@ kind: Deployment
 metadata:
   name: web
   namespace: roboshop
+  labels:
+    app: web
+    project: roboshop
+    tier: frontend
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: web
@@ -18,29 +23,23 @@ spec:
     spec:
       containers:
         - name: web
-          image: 
-      
+          image: harinadhareddy/web:1.0.0
+          imagePullPolicy: Always
 
+---
 
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
-  name: myapp
+  name: web
+  namespace: roboshop
 spec:
   selector:
-    matchLabels:
-      app: myapp
-  template:
-    metadata:
-      labels:
-        app: myapp
-    spec:
-      containers:
-      - name: myapp
-        image: <Image>
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
-        ports:
-        - containerPort: <Port>
+    app: web
+    project: roboshop
+    tier: frontend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+
