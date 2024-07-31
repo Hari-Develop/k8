@@ -106,13 +106,6 @@ spec:
       project: roboshop
       tier: frontend
   template:
-  volumes:
-  - name: nginx-conf
-    configMap: 
-      name: web
-      items:
-      - key: nginx.conf
-        path: nginx.conf
     metadata:
       labels:
         app: web
@@ -123,11 +116,18 @@ spec:
         - name: web
           image: harinadhareddy/web:1.0.0
           imagePullPolicy: Always
-      volumeMounts:
-        - name: nginx-conf
-          mountPath: /etc/nginx/nginx.conf
-          subPath: nginx.conf
-          readonly: true
+          volumeMounts:
+            - name: nginx-conf
+              mountPath: /etc/nginx/nginx.conf
+              subPath: nginx.conf
+              readonly: true
+      volumes:
+      - name: nginx-conf
+        configMap: 
+          name: web
+          items:
+          - key: nginx.conf
+            path: nginx.conf
 ---
 
 apiVersion: v1
