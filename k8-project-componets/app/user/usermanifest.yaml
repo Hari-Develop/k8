@@ -17,27 +17,27 @@ metadata:
     app: user
     project: roboshop
     tier: app
-  spec:
-    replicas: 1
-    selector:
-      matchLabels:
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user
+      project: roboshop
+      tier: app
+  template:
+    metadata:
+      labels:
         app: user
         project: roboshop
         tier: app
-    template:
-      metadata:
-        labels:
-          app: user
-          project: roboshop
-          tier: app
-      spec:
-        containers:
-          name: user
-          image: harinadhareddy/user:1.0.0
-          imagePullPolicy: Always
-          envFrom:
-            - configMapRef:
-                name: user
+    spec:
+      containers:
+      - name: user
+        image: harinadhareddy/user:1.0.0
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: user
 ---
 apiVersion: v1
 kind: Service
