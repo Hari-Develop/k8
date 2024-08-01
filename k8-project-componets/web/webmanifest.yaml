@@ -12,7 +12,7 @@ data:
     events {
       worker_connections 768;
       # multi_accept on;
-    }
+        }
 
     http {
 
