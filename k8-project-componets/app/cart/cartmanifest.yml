@@ -28,9 +28,10 @@ spec:
       tier: app
   template:
     metadata:
-      app: cart
-      project: roboshop
-      tier: app
+      labels:
+        app: cart
+        project: roboshop
+        tier: app
     spec:
       containers:
       - name: cart
