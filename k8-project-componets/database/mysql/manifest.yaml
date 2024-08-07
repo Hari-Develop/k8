@@ -4,7 +4,7 @@ metadata:
   name: mysql-config
   namespace: roboshop
 data:
-  MYSQL_DATAB ASE: "cities"
+  MYSQL_DATABASE: "cities"
 
 ---
 
